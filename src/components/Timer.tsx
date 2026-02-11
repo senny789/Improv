@@ -6,6 +6,7 @@ import { cn } from "../lib/utils";
 interface TimerProps {
   isActive: boolean;
   duration?: number; // in seconds
+  reset?: boolean;
   onComplete?: () => void;
   className?: string;
 }
@@ -13,14 +14,15 @@ interface TimerProps {
 export function Timer({
   isActive,
   duration = 120,
+  reset,
   onComplete,
   className,
 }: TimerProps) {
   const [timeLeft, setTimeLeft] = useState(duration);
 
   useEffect(() => {
-    setTimeLeft(duration);
-  }, [duration, isActive]); // Reset when duration changes or reacitvated
+    if (reset) setTimeLeft(duration);
+  }, [duration, reset]); // Reset when duration changes or reacitvated
 
   useEffect(() => {
     let interval: ReturnType<typeof setInterval>;
