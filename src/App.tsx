@@ -1,6 +1,6 @@
 import { useState, useCallback } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Dice5, RotateCcw, Zap, Play, Pause, TimerReset } from "lucide-react";
+import { RotateCcw, Zap, Play, Pause, TimerReset } from "lucide-react";
 
 import { Button } from "./components/ui/button";
 import { GameCard } from "./components/GameCard";
@@ -12,7 +12,6 @@ import {
   Select,
   SelectContent,
   SelectItem,
-  SelectLabel,
   SelectTrigger,
   SelectValue,
 } from "./components/ui/select";
